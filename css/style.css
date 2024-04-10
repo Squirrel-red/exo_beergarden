@@ -29,7 +29,7 @@ a, i{
     color: inherit;
 }
 .social_link:hover, .nav_link:hover{
-    color: rgba(215, 215, 215, 1);
+    color: rgb(183, 208, 214);
 }
 
 ul{
@@ -52,6 +52,13 @@ nav{
     display: flex;
     flex-direction: row;
     column-gap: 2em;
+}
+
+#home{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/h5-revolution-img-1.jpg);
+    background-size: cover;
 }
 
 .home_img{
@@ -106,6 +113,7 @@ h2{
 
 p.description{
     font-family: "Raleway", sans-serif;
+    color: rgb(105, 62, 62);
 }
 
 .tradition_span{
@@ -156,4 +164,269 @@ p.description{
 .tradition_div2 img, .tradition_div3 img{
     max-width: 80%;
     max-height: 80%;
+}
+
+/* -----------------------GALLERY SECTION---------------------------------*/
+.container_gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 25vw);
+    grid-template-rows: 1fr;
+}
+
+.container_img{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.container_img img{
+    width: 100%;
+}
+
+.container_img:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.container_img .filter_icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.container_img:hover .filter_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.container_img:hover .filter_icon:hover{
+    background-color: rgba(200,156,92, 0.7);
+}
+
+.container_img:hover .filter_icon:hover .ri-add-large-line{
+    transform: rotate(180deg);
+}
+
+.ri-add-large-line{
+    font-size: 300%;
+    transition: 0.5s;
+}
+
+/*-------------------------------SERVICE SECTION-----------------------------*/
+
+.container_service{
+    display: flex;
+    gap: 12px;
+    padding: 5% 10%;
+    background-color: white;
+}
+
+.item_service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service_img{
+    text-align: center;
+    position: relative;
+}
+
+.service_span{
+    font-weight: bolder;
+}
+
+.item_service:hover .overlay_service{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgb(200,156,92) 1%, transparent);
+    opacity: 0.4;
+}
+
+
+.item_service:hover .service_span{
+    color: rgb(200,156,92);
+}
+
+
+/*-----------------------------PARALLAXE SECTION-----------------------------*/
+.img_parallaxe{
+    background-image: url(../img/h5-parallax-img-2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -100;
+}
+
+.content_parallaxe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 10%;
+}
+
+.p_parallaxe{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+h3{
+    font-size: xx-large;
+}
+
+
+/*-----------------------------------MAP SECTION-----------------------------*/
+.map_section{
+    height: 90vh;
+}
+
+.container_map{
+    position: relative;
+    height: 100%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1) invert(1);
+    
+}
+
+.overlay_map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 91vh;
+    background: linear-gradient(black, transparent, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*-----------------------------------FOOTER----------------------------------*/
+footer{
+    height: 10vh;
+}
+
+.footer{
+    height: 100%;
+    box-shadow: 100px 90px 100px rgb(112, 48, 48);
+    background-color: rgb(59, 56, 56);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 10%;
+}
+
+@media screen and (max-width:1024px) {
+
+    /*------------------------------TRADITION SECTION----------------------------*/
+    .tradition_section{
+        height: auto;
+    }
+
+    .container_tradition{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    /*-------------------------------GALLERY SECTION-----------------------------*/
+    .container_gallery{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*-------------------------------SERVICE SECTION-----------------------------*/
+    .container_service{
+        flex-direction: column;
+        padding: 20%;
+        gap: 100px;
+    }
+}
+
+/*---------Adaptation aux apareils de tailles différentes---------------*/
+
+@media screen and (max-width:800px){
+    
+    .nav_menu, .nav_logo{
+        display: none;
+    }
+
+    .nav_menu{
+        position: fixed;
+        justify-content: center;
+        top: 0;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 60%;
+        height: 100%;
+        padding: 20% 20% 20% 20%;
+        transition: right 1s;
+    }
+
+    .menu_burger{
+        display: flex;
+        font-size: x-large;
+        cursor: pointer;
+    }
+
+
+    .show_menu{
+        display: flex;
+        right: 0;
+    }
+
+    .show_logo{
+        position: fixed;
+        display: flex;
+        gap: 50%;
+        top: 80%;
+        right: 30%;
+        font-size: 200%;
+    }
+
+    .close_responsive{
+        position: fixed;
+        display: flex;
+        top: 0;
+        right: 0;
+        z-index: 200;
+        font-size: xx-large;
+        margin: 4%;
+        cursor: pointer;
+    }
+
+    .nav_menu_list{
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        row-gap: 10%;
+        font-size: xx-large;
+    }
+}
+
+
+@media screen and (max-height:550px){
+    .show_logo{
+        display: none;
+    }
 }
